@@ -528,3 +528,21 @@ img{
     white-space: nowrap;
 }
 
+
+
+@media (min-width:992px) {
+    .m-d-none-lg {
+        display: none;
+    }
+    .m-bg-transparent {
+        background-color: transparent !important;
+    }
+}
+
+.show-navbar{
+    display: flex !important;
+}
+
+.d-flex-imp{
+    display: flex !important;
+}

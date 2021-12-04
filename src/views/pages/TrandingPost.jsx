@@ -76,7 +76,7 @@ const TrandingPost = ({  }) => {
 	const historyQuery=new URLSearchParams(history.location.search);
 
 	const [currentPage, setCurrentPage] = React.useState(Number(historyQuery.get('page')) || 1);
-	const [postsPerPage] = React.useState(Number(historyQuery.get('limit')) || 1);
+	const [postsPerPage] = React.useState(Number(historyQuery.get('limit')) || 3);
 	const indexOfLastPost = currentPage * postsPerPage;
 	const indexOfFirstPost = indexOfLastPost - postsPerPage;
 	const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
