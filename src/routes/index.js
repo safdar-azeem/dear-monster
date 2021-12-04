@@ -1,5 +1,5 @@
 import { lazy } from 'react';
-import { HOME, TRANDING_POST } from './routesPath';
+import { HOME, HUNTERS_VALLEY, TRANDING_POST } from './routesPath';
 
 export const Routes = [
 	{
@@ -13,5 +13,11 @@ export const Routes = [
 		title: 'Tranding post',
 		exact: true,
 		component: lazy(() => import('../views/pages/TrandingPost')),
+	},
+	{
+		path: HUNTERS_VALLEY,
+		title: 'Tranding post',
+		exact: true,
+		component: lazy(() => import('../views/pages/HuntersValley')),
 	},
 ];

@@ -397,100 +397,8 @@ $abbrev in (margin: m, padding: p) {
     color: $black;
 }
 
-.w-sm {
-    width: 210px;
-}
-.w-md {
-    width: 250px;
-}
-
-.w-lg {
-    width: 350px;
-}
-
-.w-xl {
-    width: 470px;
-}
-
-.w-xxl {
-    width: 600px;
-}
-
-.h-sm {
-    height: 210px;
-}
-.h-md {
-    height: 250px;
-}
-
-.h-lg {
-    height: 350px;
-}
-
-.h-xl {
-    height: 470px;
-}
-
-.h-xxl {
-    height: 600px;
-}
-
 img{
     object-fit: cover;
-}
-
-.w-90{
-    width:90%
-}
-
-.w-80{
-    width:80%
-}
-
-.h-90{
-    height:90%
-}
-
-.h-80{
-    height:80%
-}
-
-@media (min-width:768px) {
-    .w-md-md {
-        width: 250px;
-    }
-
-    .w-md-lg {
-        width: 350px;
-    }
-
-    .w-md-xl {
-        width: 470px;
-    }
-
-    .w-md-xxl {
-        width: 600px;
-    }
-   .w-md-auto{
-    width:auto !important;
-    }
-    ///height
-    .h-md-md {
-        height: 250px;
-    }
-
-    .h-md-lg {
-        height: 350px;
-    }
-
-    .h-md-xl {
-        height: 470px;
-    }
-
-    .h-md-xxl {
-        height: 600px;
-    }
-
 }
 
 .flex-nowWrap{
@@ -498,7 +406,6 @@ img{
         overflow-x: auto !important;
         white-space: nowrap !important;
 }
-
 
 .fw-light{
  font-weight: $font-weight-light !important;
@@ -527,8 +434,6 @@ img{
 .whiteSpace-nowrap{
     white-space: nowrap;
 }
-
-
 
 @media (min-width:992px) {
     .m-d-none-lg {
