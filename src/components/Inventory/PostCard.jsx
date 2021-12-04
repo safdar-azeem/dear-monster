@@ -14,11 +14,11 @@ const PostCard = ({ className, post, stepImg }) => {
 					<img
 						src={stepImg}
 						className='position-relative'
-						style={{ transform: 'translateY(-35px)', zIndex: '-1', width: '250px' }}
+						style={{ transform: 'translateY(-35px)', zIndex: '-1', width: '300px' }}
 					/>
 				</div>
-				<div class='findDearMonster w-100   h-100 py-4 ' style={{ marginTop: '-125px' }}>
-					<p className='text-center mt-32px fs-18 bold'>{post.title}</p>
+				<div class='findDearMonster w-100   h-100 py-4 ' style={{ marginTop: '-150px' }}>
+					<p className='text-center mt-14px fs-18 bold'>{post.title}</p>
 					<div className='center mt-5'>
 						<div>
 							{[...Array(post.totalRating)].map((e, i) => {
@@ -43,14 +43,10 @@ const PostCard = ({ className, post, stepImg }) => {
 							);
 						})}
 					</div>
-					<div className='center center mt-5 mb-4  fs-19 text-white'>
-						<img src='/assets/imgs/header/logo.png' className='w-45px me-4' />
-						<p className='fs-30'>3,000</p>
-					</div>
 				</div>
 			</main>
 			<footer className='center mt-6'>
-				<div class='header-Connect-btn h-40px center w-100px px-2 bold'>Connect</div>
+				<p class='header-Connect-btn h-40px center w-100px bold px-2'>Connect</p>
 			</footer>
 		</div>
 	);

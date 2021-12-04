@@ -16,9 +16,10 @@ const Header = () => {
 					<div
 						className={`${
 							active
-								? 'position-fixed bg-dark top-0 w-100 w-lg-auto start-0 vh-lg-auto vh-100'
+								? 'position-fixed bg-dark top-0 w-100 w-100 start-0 vh-lg-auto vh-100'
 								: 'd-none d-lg-flex align-items-center '
 						} `}
+						style={{zIndex: '9999'}}
 					>
 						<button
 							className={`${active && 'd-flex-imp'} d-none btn m-3`}
@@ -35,7 +36,7 @@ const Header = () => {
 							NavbarRoutes.map(route=>{
 								return (
 									<Link
-										to={route.path}
+										to={route.pathForNavabr}
 										class={`header-btn text-warning ${!active && 'me-4'} w-auto mb-5`}
 										onClick={() => setActive(false)}
 									>
@@ -46,13 +47,13 @@ const Header = () => {
 						}
 						</div>
 					</div>
-					<div className='d-lg-flex	 d-none justify-content-between align-items-center'>
+					<div className='d-lg-flex d-none justify-content-between align-items-center'>
 						<img src='/assets/imgs/header/logo.png' className='w-50px' />
 						<div class='dms-block w-md h-40px ms-4 center px-2'>
 							<div className='dms-btn w-100 me-2  center'>10000</div>
 							<div className='dms-btn w-100  center'>Dms</div>
 						</div>
-						<div class='header-Connect-btn h-40px ms-4 w-25 center'>Connect</div>
+						<div class='header-Connect-btn h-40px ms-4 w-25 center bold'>Connect</div>
 					</div>
 				</section>
 				<section>
@@ -60,7 +61,7 @@ const Header = () => {
 						<small>Announcement: Player A revealed a monster in the cave!</small>
 					</div>
 				</section>
-				<section class='headingBox mt-6 center w-190px mx-auto h-70px'>Trading Post</section>
+				
 			</section>
 		);
 }

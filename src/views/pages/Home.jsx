@@ -1,6 +1,9 @@
 import React from 'react'
 
-const Home = () => {
+const Home = ({history}) => {
+	React.useEffect(() => {
+		history.push('/hunters-valley');
+	}, [])
     return (
 			<div>		
 			</div>

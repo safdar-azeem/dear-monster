@@ -4,7 +4,7 @@ const FindMonster = () => {
     return (
 			<div class='findDearMonster py-6'>
 				<div class='px-5'>
-					<div class='mt-7 center fw-bold fw-24'>Find Your DearMonster</div>
+					<div class='mt-7 center fw-bold fw-24 bold'>Find Your DearMonster</div>
 				</div>
 				<div class='ps-8 mt-8'>
 					<p class='text-white mb-5'>Star Rating</p>
@@ -129,7 +129,7 @@ const FindMonster = () => {
 					</div>
 				</section>
 				<footer class='mt-6'>
-					<div class='filterCheckBtn  w-140px mx-auto py-3 center'>Filter</div>
+					<div class='filterCheckBtn  w-140px mx-auto py-3 center bold'>Filter</div>
 				</footer>
 			</div>
 		);

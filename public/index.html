@@ -26,18 +26,25 @@
   <style>
     @font-face {
       font-family: 'comic-sans';
-      src: url('./assets//fonts//comici.ttf');
+      src: url('./assets/fonts/comici.ttf');
     }
-
+    @font-face {
+      font-family: 'Comic Sans MS';
+      src: url('./assets/fonts/comicz.ttf');
+    }
+    .bold{
+      font-family: 'Comic Sans MS';
+      font-weight: bold;
+    }
     body {
-      background: url('./assets/imgs/background.png');
+      background: url('/assets/imgs/background.png');
       background-repeat: no-repeat;
       background-size: cover;
       font-family: 'comic-sans';
       width: 100vw;
       overflow-x: hidden;
     }
-
+    
     .header-btn {
       background: url('/assets/imgs/header/headerBtn.png');
       background-repeat: no-repeat;
@@ -99,6 +106,18 @@
       background-size: 100% 100%;
       width: 100%;
     }
+    .instructionsBoard{
+      background: url('/assets/imgs/instructionBoard.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 100%;
+    }
+    .timerBoard{
+      background: url('/assets/imgs/timerBoard.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      width: 100%;
+    }
   </style>
 </head>
 
@@ -115,6 +134,48 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      const carousel = () => {
+          const carousel = document.querySelector('.carousel');
+          const carouselItems = document.querySelectorAll('.carousel-item');
+          const prevBtn = document.querySelector('.prev-btn');
+          const nextBtn = document.querySelector('.next-btn');
+          let counter = 0;
+          const size = carouselItems[0].clientWidth;
+
+          carousel.style.transform = 'translateX(' + -size * counter + 'px)';
+
+          nextBtn.addEventListener('click', () => {
+            if (counter >= carouselItems.length - 1) return;
+            carousel.style.transition = 'transform 0.4s ease-in-out';
+            counter++;
+            carousel.style.transform = 'translateX(' + -size * counter + 'px)';
+          });
+
+          prevBtn.addEventListener('click', () => {
+            if (counter <= 0) return;
+            carousel.style.transition = 'transform 0.4s ease-in-out';
+            counter--;
+            carousel.style.transform = 'translateX(' + -size * counter + 'px)';
+          });
+
+          carousel.addEventListener('transitionend', () => {
+            if (carouselItems[counter].id === 'lastClone') {
+              carousel.style.transition = 'none';
+              counter = carouselItems.length - 2;
+              carousel.style.transform = 'translateX(' + -size * counter + 'px)';
+            }
+
+            if (carouselItems[counter].id === 'firstClone') {
+              carousel.style.transition = 'none';
+              counter = carouselItems.length - counter;
+              carousel.style.transform = 'translateX(' + -size * counter + 'px)';
+            }
+          });
+        };
+
+        carousel()
+    </script>
 </body>
 
 </html>

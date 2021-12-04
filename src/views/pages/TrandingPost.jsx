@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import FindMonster from '../../components/TrandingPost/FindMonster';
 import PostCard from "../../components/postCard/PostCard"
 import { useHistory } from 'react-router';
+import CurrenPageTitle from "../../components/common/CurrenPageTitle"
+
 const data = [
 	{
 		id: '#123212',
@@ -102,26 +104,39 @@ const TrandingPost = ({  }) => {
 
 
 	return (
-		<div className='mt-lg-9 mt-7 container'>
-			<div class='row'>
-				<div class='col-lg-3 col-12'>
-					<FindMonster />
-				</div>
-				<div class='col-lg-9 col-12'>
-					<section className='row row-cols-lg-3  gx-8 mt-9 	mt-lg-0 '>
-						{currentPosts.map((post) => {
-							return (
-								<PostCard post={post} stepImg='/assets/imgs/droganBord.png' className='mb-9' />
-							);
-						})}
-					</section>
-					<footer className='center pb-8 pt-4'>
-						<img src='/assets/imgs/ArrowLeft.png ' className='cursor' onClick={previousPage} />
-						<p className='text-white fs-22 mx-5'>
-							{currentPage}/{totalPages}
-						</p>
-						<img src='/assets/imgs/ArrowRight.png' className='cursor' onClick={nextPage} />
-					</footer>
+		<div>
+			<CurrenPageTitle title='Trading Post'></CurrenPageTitle>
+			<div className='mt-lg-9 mt-7 container'>
+				<div class='row'>
+					<div class='col-lg-3 col-12'>
+						<FindMonster />
+					</div>
+					<div class='col-lg-9 col-12'>
+						<div class='px-md-0 px-4'>
+							<section className='row row-cols-lg-3  gx-8 mt-9 	mt-lg-0 '>
+								{currentPosts.map((post) => {
+									return (
+										<PostCard
+											post={post}
+											stepImg='/assets/imgs/droganBord.png'
+											className='mb-9'
+										/>
+									);
+								})}
+							</section>
+						</div>
+						<footer className='center pb-8 pt-4'>
+							<img
+								src='/assets/imgs/ArrowLeft.png '
+								className='cursor'
+								onClick={previousPage}
+							/>
+							<p className='text-white fs-22 mx-5'>
+								{currentPage}/{totalPages}
+							</p>
+							<img src='/assets/imgs/ArrowRight.png' className='cursor' onClick={nextPage} />
+						</footer>
+					</div>
 				</div>
 			</div>
 		</div>
