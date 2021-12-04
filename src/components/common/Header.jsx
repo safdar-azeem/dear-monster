@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {Link} from 'react-router-dom'
+import { NavbarRoutes } from '../../routes/';
 const Header = () => {
 	const [active,setActive]=useState(false)
 	console.log('active :>> ', active);
@@ -30,34 +31,19 @@ const Header = () => {
 								active && 'show-navbar flex-lg-column mt-lg-8'
 							} w-lg-auto d-lg-flex d-none flex-lg-row flex-column w-100 mt-8 mt-lg-5 justify-content-between align-items-center`}
 						>
-							<Link
-								to='/'
-								class={`header-btn text-warning ${!active && 'me-5'} px-5 mb-5`}
-								onClick={() => setActive(false)}
-							>
-								Hunter’s Valley
-							</Link>
-							<Link
-								to='/tranding-post'
-								class={`header-btn text-warning ${!active && 'me-5'} px-5  mb-5`}
-								onClick={() => setActive(false)}
-							>
-								Trading Post
-							</Link>
-							<Link
-								to='/'
-								class={`header-btn text-warning ${!active && 'me-5'} px-5  mb-5`}
-								onClick={() => setActive(false)}
-							>
-								Inventory
-							</Link>
-							<Link
-								to='/'
-								class={`header-btn text-warning px-4  mb-5`}
-								onClick={() => setActive(false)}
-							>
-								More
-							</Link>
+						{
+							NavbarRoutes.map(route=>{
+								return (
+									<Link
+										to={route.path}
+										class={`header-btn text-warning ${!active && 'me-4'} w-auto mb-5`}
+										onClick={() => setActive(false)}
+									>
+										<span className='mx-2'>{route.title}</span>
+									</Link>
+								);
+							})
+						}
 						</div>
 					</div>
 					<div className='d-lg-flex	 d-none justify-content-between align-items-center'>
