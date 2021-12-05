@@ -18,8 +18,8 @@ const PostCard = ({ className, post, stepImg }) => {
 					/>
 				</div>
 				<div
-					class='findDearMonster  h-100 py-4 '
-					style={{ marginTop: '-110px', width: '-113px' }}
+					class='findDearMonster  h-md2 py-4 '
+					style={{ marginTop: '-110px',width:'290px' }}
 				>
 					<p className='text-center mt-14px fs-18 bold'>{post.title}</p>
 					<div className='center mt-5'>

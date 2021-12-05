@@ -443,6 +443,11 @@ img{
         background-color: transparent !important;
     }
 }
+@media (min-width:492px) {
+    .sm-fs-29 {
+        font-size:29px !important;
+    }
+}
 
 .show-navbar{
     display: flex !important;

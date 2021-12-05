@@ -164,9 +164,9 @@ const TradingPost = ({}) => {
 	return (
 		<div>
 			<CurrenPageTitle title='Trading Post'></CurrenPageTitle>
-			<div className='mt-lg-9 mt-7 container'>
-				<div class='row gx-7  px-md-auto px-0'>
-					<div class='col-md-5 col-lg-3 col-11'>
+			<div className='mt-lg-9 mt-7 container '>
+				<div class='row  px-md-auto justify-content-center'>
+					<div class='col-md-5 col-lg-3 col-12'>
 						<FindMonster filterByRating={filterByRating} filterByLevel={filterByLevel} />
 					</div>
 					<div class='col-lg-9 col-md-7 col-12'>

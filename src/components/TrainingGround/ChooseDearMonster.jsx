@@ -46,21 +46,32 @@ const ChooseDearMonster = () => {
     return (
 			<div>
 				<div className='center'>
-					<p className='text-white mt-7 fs-29'>CHOOSE A DEARMONSTER</p>
+					<p className='text-white mt-9 sm-fs-29 fs-21 whiteSpace-nowrap'>
+						CHOOSE A DEARMONSTER
+					</p>
 				</div>
 				<div className='container mt-9 position-relative'>
-					<img src='/assets/imgs/ArrowLeft.png ' className='cursor translate-left-middle ms-3' />
-					<img src='/assets/imgs/ArrowRight.png' className='cursor translate-right-middle' />
-					<div class='w-85 mx-auto px-4 d-flex justify-content-center align-items-center' style={{flexWrap:'nowrap'}}>
-							{data.map((post,i) => {
-								return (
-									<PostCard
-										post={post}
-										stepImg='/assets/imgs/droganBord.png'
-										className={`mb-9 ${i!==data.length-1&& 'me-8'}`}
-									/>
-								);
-							})}
+					<img
+						src='/assets/imgs/ArrowLeft.png '
+						className='d-md-flex d-none cursor translate-left-middle ms-3'
+					/>
+					<img
+						src='/assets/imgs/ArrowRight.png'
+						className='d-md-flex d-none cursor translate-right-middle'
+					/>
+					<div
+						class='w-85 mx-auto  px-4 overflow-auto d-flex justify-content-center align-items-center'
+						style={{ flexWrap: 'nowrap' }}
+					>
+						{data.map((post, i) => {
+							return (
+								<PostCard
+									post={post}
+									stepImg='/assets/imgs/droganBord.png'
+									className={`mb-9 ${i !== data.length - 1 && 'me-8'}`}
+								/>
+							);
+						})}
 					</div>
 				</div>
 			</div>

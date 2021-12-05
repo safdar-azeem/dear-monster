@@ -61,13 +61,16 @@ const ChooseMinion = () => {
     return (
 			<div>
 				<div className='center'>
-					<h5 className='text-white mt-7 fs-29'>CHOOSE A MINION</h5>
+					<h5 className='text-white mt-7 sm-fs-29 fs-21'>CHOOSE A MINION</h5>
 				</div>
-				<div className='container mt-4 mb-9 '>
+				<div className='container mb-9  mt-5'>
 					<div class='w-100 px-2'>
-						<section className='row row-cols-lg-4 row-cols-md-2   gx-8 mt-9 '>
+						<section
+							className='d-inline-flex justify-content-md-between justify-content-center  w-100'
+							style={{ flexWrap: 'wrap' }}
+						>
 							{data.map((post) => {
-								return <MinionCard post={post} />;
+								return <MinionCard post={post} className='me-lg-6' />;
 							})}
 						</section>
 					</div>

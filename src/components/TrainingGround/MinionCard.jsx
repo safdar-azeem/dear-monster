@@ -8,11 +8,11 @@ const MinionCard = ({ className, post, stepImg }) => {
 					<img src={post.img} className='w-md h-lg' />
 				</div>
 				<div
-					class='findDearMonster h-100 pt-4 pb-6 '
+					class='findDearMonster h-md2 pt-4 pb-6 '
 					style={{ marginTop: '-85px', width: '280px' }}
 				>
-					<p className='text-center mt-2px  fs-18 bold'>{post.title}</p>
-					<div className='text-white center flex-column mt-5 fs-15'>
+					<p className='text-center mt-3  fs-18 bold'>{post.title}</p>
+					<div className='text-white center flex-column mt-8 fs-15'>
 						{Object.keys(post.values).map((key, index) => {
 							const key2 = key.split('_').join(' ');
 							return (

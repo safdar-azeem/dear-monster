@@ -56,9 +56,9 @@ const Header = () => {
 				</section>
 				<section>
 					<div class='announcementBar mt-3 h-30px d-flex align-items-center py-2 fw-bold fs-17'>
-						<small class='textMove'>
+						<marquee direction='right' className='w-100 whiteSpace-nowrap'>
 							Announcement: Player A revealed a monster in the cave!
-						</small>
+						</marquee>
 					</div>
 				</section>
 			</section>

@@ -22,6 +22,15 @@
      overflow-x: hidden;
  }
 
+ .loading-on-load {
+     background: url('/assets/imgs/background.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+       overflow-x: hidden;
+       width: 100vw;
+
+ }
+
  .header-btn {
      background: url('/assets/imgs/header/headerBtn.png');
      background-repeat: no-repeat;
@@ -104,23 +113,4 @@
      background-repeat: no-repeat;
      background-size: 100% 100%;
      width: 100%;
- }
-
- @keyframes textMove {
-     from {
-         left: 0px;
-     }
-
-     to {
-         left: 100vw;
-     }
- }
-
- .textMove {
-     position: relative;
-     animation: textMove 20s infinite;
- }
-
- .textMove:hover {
-     animation-play-state: paused;
  }
