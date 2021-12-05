@@ -7,9 +7,9 @@ const HuntersValley = () => {
 				<div className='container center mt-6'>
 					<div class='discoveryCaveBg py-2 w-md-lg2 w-md2 mb-8'>
 						<div class='center'>
-							<img src='/assets/imgs/cave.png' alt='' class='w-60 mt-7' />
+							<img src='/assets/gif/Cave Animated.gif' alt='' class='w-75 mt-7' />
 						</div>
-						<div class='center fs-18 flex-column text-white'>
+						<div class='center fs-19 flex-column text-white'>
 							<p class='mt-2 mb-6'>Discovery Cave</p>
 							<div class='d-flex justify-content-between w-50 mb-4'>
 								<p>Price</p>
@@ -25,8 +25,10 @@ const HuntersValley = () => {
 							</div>
 						</div>
 						<footer className='center mt-6 flex-column pb-4'>
-							<div class='header-Connect-btn h-40px center w-100px px-2'>Connect</div>
-							<button class='btn border h-40px center w-100px px-2 mt-5 text-white'>
+							<div class='header-Connect-btn h-40px center w-100px px-4 fs-16 bold'>
+								Connect
+							</div>
+							<button class='btn border h-40px center w-100px px-2 mt-5  text-white'>
 								BUY DMS
 							</button>
 						</footer>

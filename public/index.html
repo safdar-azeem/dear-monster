@@ -118,6 +118,18 @@
       background-size: 100% 100%;
       width: 100%;
     }
+    @keyframes textMove {
+  from {left: 0px;}
+  to {left: 100vw;}
+}
+.textMove {
+  position: relative;
+  animation: textMove 20s infinite;
+}
+
+.textMove:hover {
+  animation-play-state: paused;
+}
   </style>
 </head>
 

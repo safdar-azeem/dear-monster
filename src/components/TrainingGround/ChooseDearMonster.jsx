@@ -46,18 +46,18 @@ const ChooseDearMonster = () => {
     return (
 			<div>
 				<div className='center'>
-					<h5 className='text-white mt-7 fs-29'>CHOOSE A DEARMONSTER</h5>
+					<p className='text-white mt-7 fs-29'>CHOOSE A DEARMONSTER</p>
 				</div>
 				<div className='container mt-9 position-relative'>
 					<img src='/assets/imgs/ArrowLeft.png ' className='cursor translate-left-middle ms-3' />
 					<img src='/assets/imgs/ArrowRight.png' className='cursor translate-right-middle' />
-					<div class='w-85 mx-auto px-4 d-flex' style={{flexWrap:'nowrap'}}>
-							{data.map((post) => {
+					<div class='w-85 mx-auto px-4 d-flex justify-content-center align-items-center' style={{flexWrap:'nowrap'}}>
+							{data.map((post,i) => {
 								return (
 									<PostCard
 										post={post}
 										stepImg='/assets/imgs/droganBord.png'
-										className='mb-9 me-10'
+										className={`mb-9 ${i!==data.length-1&& 'me-8'}`}
 									/>
 								);
 							})}

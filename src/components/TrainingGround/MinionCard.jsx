@@ -7,7 +7,10 @@ const MinionCard = ({ className, post, stepImg }) => {
 				<div>
 					<img src={post.img} className='w-md h-lg' />
 				</div>
-				<div class='findDearMonster w-100  h-100 pt-4 pb-6 ' style={{ marginTop: '-85px' }}>
+				<div
+					class='findDearMonster h-100 pt-4 pb-6 '
+					style={{ marginTop: '-85px', width: '280px' }}
+				>
 					<p className='text-center mt-2px  fs-18 bold'>{post.title}</p>
 					<div className='text-white center flex-column mt-5 fs-15'>
 						{Object.keys(post.values).map((key, index) => {

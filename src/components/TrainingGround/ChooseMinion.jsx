@@ -65,7 +65,7 @@ const ChooseMinion = () => {
 				</div>
 				<div className='container mt-4 mb-9 '>
 					<div class='w-100 px-2'>
-						<section className='row row-cols-lg-4 row-cols-md-3   gx-8 mt-9 '>
+						<section className='row row-cols-lg-4 row-cols-md-2   gx-8 mt-9 '>
 							{data.map((post) => {
 								return <MinionCard post={post} />;
 							})}

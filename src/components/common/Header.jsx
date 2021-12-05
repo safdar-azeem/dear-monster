@@ -19,7 +19,7 @@ const Header = () => {
 								? 'position-fixed bg-dark top-0 w-100 w-100 start-0 vh-lg-auto vh-100'
 								: 'd-none d-lg-flex align-items-center '
 						} `}
-						style={{zIndex: '9999'}}
+						style={{ zIndex: '9999' }}
 					>
 						<button
 							className={`${active && 'd-flex-imp'} d-none btn m-3`}
@@ -32,8 +32,7 @@ const Header = () => {
 								active && 'show-navbar flex-lg-column mt-lg-8'
 							} w-lg-auto d-lg-flex d-none flex-lg-row flex-column w-100 mt-8 mt-lg-5 justify-content-between align-items-center`}
 						>
-						{
-							NavbarRoutes.map(route=>{
+							{NavbarRoutes.map((route) => {
 								return (
 									<Link
 										to={route.pathForNavabr}
@@ -43,8 +42,7 @@ const Header = () => {
 										<span className='mx-2'>{route.title}</span>
 									</Link>
 								);
-							})
-						}
+							})}
 						</div>
 					</div>
 					<div className='d-lg-flex d-none justify-content-between align-items-center'>
@@ -57,11 +55,12 @@ const Header = () => {
 					</div>
 				</section>
 				<section>
-					<div class='announcementBar mt-3 h-30px center py-2 fw-bold fs-17'>
-						<small>Announcement: Player A revealed a monster in the cave!</small>
+					<div class='announcementBar mt-3 h-30px d-flex align-items-center py-2 fw-bold fs-17'>
+						<small class='textMove'>
+							Announcement: Player A revealed a monster in the cave!
+						</small>
 					</div>
 				</section>
-				
 			</section>
 		);
 }

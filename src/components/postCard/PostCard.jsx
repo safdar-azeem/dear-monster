@@ -8,7 +8,7 @@ const PostCard = ({ className, post, stepImg }) => {
 			</header>
 			<main class='center flex-column'>
 				<div>
-					<img src={post.img} className='w-sm' />
+					<img src={post.img} className='w-100' />
 				</div>
 				<div class='position-relative'>
 					<img

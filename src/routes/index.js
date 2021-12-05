@@ -2,7 +2,7 @@ import { lazy } from 'react';
 import {
 	HOME,
 	HUNTERS_VALLEY,
-	TRANDING_POST,
+	TRADING_POST,
 	INSTRUCTIONS,
 	INVENTORY,
 	TRAINING_GROUND,
@@ -17,11 +17,11 @@ export const NavbarRoutes = [
 		component: lazy(() => import('../views/pages/HuntersValley')),
 	},
 	{
-		path: TRANDING_POST,
-		title: 'Tranding post',
-		pathForNavabr: TRANDING_POST,
+		path: TRADING_POST,
+		title: 'Trading post',
+		pathForNavabr: TRADING_POST,
 		exact: true,
-		component: lazy(() => import('../views/pages/TrandingPost')),
+		component: lazy(() => import('../views/pages/TradingPost')),
 	},
 	{
 		path: INVENTORY,
@@ -39,11 +39,11 @@ export const NavbarRoutes = [
 		component: lazy(() => import('../views/pages/TrainingGround')),
 	},
 	{
-		path: '/',
-		pathForNavabr: '/',
+		path: INSTRUCTIONS,
+		pathForNavabr: INSTRUCTIONS,
 		title: 'More',
 		exact: true,
-		component: lazy(() => import('../views/pages/Home')),
+		component: lazy(() => import('../views/pages/HowToPlay')),
 	},
 ];
 
@@ -55,10 +55,7 @@ export const Routes = [
 		exact: true,
 		component: lazy(() => import('../views/pages/Home')),
 	},
-	{
-		path: INSTRUCTIONS,
-		title: 'instructions',
-		exact: true,
-		component: lazy(() => import('../views/pages/HowToPlay')),
-	},
+	
 ];
+
+

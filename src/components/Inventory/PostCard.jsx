@@ -14,10 +14,13 @@ const PostCard = ({ className, post, stepImg }) => {
 					<img
 						src={stepImg}
 						className='position-relative'
-						style={{ transform: 'translateY(-35px)', zIndex: '-1', width: '300px' }}
+						style={{ transform: 'translateY(-25px)', zIndex: '-1', width: '220px' }}
 					/>
 				</div>
-				<div class='findDearMonster w-100   h-100 py-4 ' style={{ marginTop: '-150px' }}>
+				<div
+					class='findDearMonster  h-100 py-4 '
+					style={{ marginTop: '-110px', width: '-113px' }}
+				>
 					<p className='text-center mt-14px fs-18 bold'>{post.title}</p>
 					<div className='center mt-5'>
 						<div>
