@@ -3,163 +3,55 @@ import FindMonster from '../../components/TradingPost/FindMonster';
 import PostCard from '../../components/postCard/PostCard';
 import { useHistory } from 'react-router';
 import CurrenPageTitle from '../../components/common/CurrenPageTitle';
-
-const data = [
-	{
-		id: '#123212',
-		title: 'Dragon',
-		img: '/assets/imgs/drogan.png',
-		rating: '3',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Dragon',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Rhino',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Dragon',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Dragon',
-		img: '/assets/imgs/drogan.png',
-		rating: '1',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Dragon',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Dragon',
-		img: '/assets/imgs/drogan.png',
-		rating: '1',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-];
+import data from '../..//data/Post.json';
+import { usePagination } from '../../hooks/usePagination';
 
 const TradingPost = ({}) => {
 	const history = useHistory();
-	const historyQuery = new URLSearchParams(history.location.search);
-
-	const [currentPage, setCurrentPage] = React.useState(Number(historyQuery.get('page')) || 1);
-	const [posts, setPosts] = useState(data);
-	const [postsPerPage] = React.useState(Number(historyQuery.get('limit')) || 6);
-	const [currentPosts, setCurrentPosts] = useState([]);
-	const [error,setError]=useState('');
-	const totalPages = Math.ceil(posts.length / postsPerPage);
+	const [filterValues, setFilterValues] = useState({});
+	const { pageData, currentPage, previousPage, nextPage, totalPages, doPagination } =
+		usePagination(data, 6, history.location.pathname);
 
 
-
-
-	useEffect(() => {
-		const indexOfLastPost = currentPage * postsPerPage;
-		const indexOfFirstPost = indexOfLastPost - postsPerPage;
-		setCurrentPosts(posts.slice(indexOfFirstPost, indexOfLastPost));
-	}, [currentPage, postsPerPage, posts]);
-
-	const nextPage = () => {
-		if (currentPage < Math.ceil(posts.length / postsPerPage)) {
-			setCurrentPage(currentPage + 1);
-		}
-	};
-
-	const previousPage = () => {
-		if (currentPage > 1) {
-			setCurrentPage(currentPage - 1);
-		}
-	};
-
-	useEffect(() => {
-		currentPage && history.push(`/trading-post?page=${currentPage}&limit=${postsPerPage}`);
-	}, [currentPage]);
-
-	const filterByRating = (rating) => {
-		if (rating.length>=1) {
-			const filteredData = data.filter((item) => rating.includes(item.rating));
-			if(filteredData.length==0){
-				setError('No Data found');
+	const sortData = (order, sortBy) => {
+		const sortingData = data.sort((a, b) => {
+			if (order === 'desc') {
+				return +a[sortBy] - +b[sortBy];
+			} else if (order == 'asc') {
+				return +b[sortBy] - +a[sortBy];
 			}
-			setPosts(filteredData);
-		}else{
-			setPosts(data);
-			setError('');
-		}
+			return 0;
+		});
+		doPagination(sortingData);
 	};
 
-	const filterByLevel = (level) => {
-		if (level.length >= 1) {
-			const filteredData = data.filter((item) => level.includes(item.values.level[0]));
-			if (filteredData.length == 0) {
-				setError('No Data found');
-			}
-			setPosts(filteredData);
-		} else {
-			setPosts(data);
-			setError('');
-		}
+	const filterData = (filteringValues) => {
+		setFilterValues(filteringValues);
 	};
 
+	const searchData = (searchValue) => {
+		const searchData = data.filter((item) => {
+			return item.id.toLowerCase()==searchValue.toLowerCase();
+		});
+		doPagination(searchData);
+	};
+
+
+	const clearSearchData = () => {
+		doPagination(data);
+	};
+
+	React.useEffect(() => {
+		if (Object.keys(filterValues).length !== 0) {
+			const filterdata = data.filter((item) => {
+				const isTrue = Object.keys(filterValues).filter((key) => {
+					return filterValues[key].includes(item[key]);
+				});
+				return isTrue.length >= 1 && item;
+			});
+			doPagination(filterdata);
+		}
+	}, [filterValues]);
 
 	return (
 		<div>
@@ -167,17 +59,22 @@ const TradingPost = ({}) => {
 			<div className='mt-lg-9 mt-7 container '>
 				<div class='row  px-md-auto justify-content-center'>
 					<div class='col-md-5 col-lg-3 col-12'>
-						<FindMonster filterByRating={filterByRating} filterByLevel={filterByLevel} />
+						<FindMonster
+							filterData={filterData}
+							sortData={sortData}
+							searchData={searchData}
+							clearSearchData={clearSearchData}
+						/>
 					</div>
 					<div class='col-lg-9 col-md-7 col-12'>
 						<div class='px-md-0'>
 							<section className='row row-cols-lg-3  gx-8 mt-9 	mt-md-0 '>
-								{error && currentPosts.length == 0 ? (
+								{'error' && pageData.length == 0 ? (
 									<div className='col-12 center w-100 text-white mt-5'>
-										<h3>{error}</h3>
+										<h3>{'error'}</h3>
 									</div>
 								) : (
-									currentPosts.map((post) => {
+									pageData.map((post) => {
 										return (
 											<PostCard
 												post={post}
@@ -189,7 +86,7 @@ const TradingPost = ({}) => {
 								)}
 							</section>
 						</div>
-						{error && currentPosts.length == 0 ? (
+						{'error' && pageData.length == 0 ? (
 							''
 						) : (
 							<footer className='center pb-8 pt-4'>

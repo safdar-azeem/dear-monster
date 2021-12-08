@@ -1,0 +1,202 @@
+[
+    {
+         "id": "1",
+         "title": "Dragon",
+         "cetagory": "Dragons",
+         "img": "/assets/gif/Dragon (1)/1. Dragon animated.gif",
+         "rating": "1",
+         "totalRating": 3,
+         "level": "1",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "1000"
+     }, 
+     {
+         "id": "2",
+         "title": "Dragon",
+         "cetagory": "Dragons",
+         "img": "/assets/gif/Dragon (1)/2. Dragon animated.gif",
+         "rating": "2",
+         "totalRating": 3,
+         "level": "2",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "2000"
+     }, 
+     {
+         "id": "3",
+         "title": "Dragon",
+         "cetagory": "Dragons",
+         "img": "/assets/gif/Dragon (1)/3. Dragon animated.gif",
+         "rating": "3",
+         "totalRating": 3,
+         "level": "3",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "3000"
+     },
+    {"id": "4",
+    "title": "Bird",
+    "cetagory": "Birds",
+    "img": "/assets/gif/birds/1. Bird animated.gif",
+    "rating": "1",
+    "totalRating": 3,
+    "level": "1",
+    "values": {
+        "level": "2/612 Exp",
+        "element": "None",
+        "offchain_Exp": "",
+        "energy": 2,
+        "ownerId": "A34500"
+    },
+    "price": "1000"
+}, {
+    "id": "5",
+    "title": "Bird",
+    "cetagory": "Birds",
+    "img": "/assets/gif/birds/2. Bird animated.gif",
+    "rating": "2",
+    "totalRating": 3,
+    "level": "2",
+    "values": {
+        "level": "2/612 Exp",
+        "element": "None",
+        "offchain_Exp": "",
+        "energy": 2,
+        "ownerId": "A34500"
+    },
+    "price": "2000"
+}, {
+    "id": "6",
+    "title": "Bird",
+    "cetagory": "Birds",
+    "img": "/assets/gif/birds/3. Bird animated.gif",
+    "rating": "3",
+    "totalRating": 3,
+    "level": "3",
+    "values": {
+        "level": "2/612 Exp",
+        "element": "None",
+        "offchain_Exp": "",
+        "energy": 2,
+        "ownerId": "A34500"
+    },
+    "price": "3000"
+},
+     {
+         "id": "7",
+         "title": "Crocodile",
+         "cetagory": "crocodiles",
+         "img": "/assets/gif/Crocodile/1. Crocodile animated.gif",
+         "rating": "1",
+         "totalRating": 3,
+         "level": "1",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "1000"
+     }, {
+         "id": "8",
+         "title": "Crocodile",
+         "cetagory": "crocodiles",
+         "img": "/assets/gif/Crocodile/2. Crocodile animated.gif",
+         "rating": "2",
+         "totalRating": 3,
+         "level": "2",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "2000"
+     }, 
+     {
+         "id": "9",
+         "title": "Crocodile",
+         "cetagory": "crocodiles",
+         "img": "/assets/gif/Crocodile/3. Crocodile animated.gif",
+         "rating": "3",
+         "totalRating": 3,
+         "level": "3",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "3000"
+     },
+     {
+         "id": "10",
+         "title": "Eevee",
+         "cetagory": "crocodiles",
+         "img": "/assets/gif/3 Eevee set (1)/1. Eevee animated.gif",
+         "rating": "1",
+         "totalRating": 3,
+         "level": "1",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "1000"
+     },
+     {
+         "id": "11",
+         "title": "Eevee",
+         "cetagory": "Eevee",
+         "img": "/assets/gif/3 Eevee set (1)/2. Eevee animated.gif",
+         "rating": "2",
+         "totalRating": 3,
+         "level": "2",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "2000"
+     },
+     {
+         "id": "12",
+         "title": "Eevee",
+         "cetagory": "Eevee",
+         "img": "/assets/gif/3 Eevee set (1)/3. Eevee animated.gif",
+         "rating": "3",
+         "totalRating": 3,
+         "level": "1",
+         "values": {
+             "level": "2/612 Exp",
+             "element": "None",
+             "offchain_Exp": "",
+             "energy": 2,
+             "ownerId": "A34500"
+         },
+         "price": "3000"
+     }
+]

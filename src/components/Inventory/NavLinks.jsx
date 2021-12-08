@@ -29,20 +29,6 @@ const NavLinks = ({match}) => {
 						alt=''
 					/>
 				</Link>
-				<Link
-					class='text-white me-7 center flex-column position-relative'
-					to='/inventory/available'
-				>
-					<p>Available</p>
-					<img
-						src='/assets/imgs/arrow.png'
-						className={`position-absolute ${
-							match.params.slug == 'available' ? 'd-flex' : 'd-none'
-						} `}
-						style={{ top: '43px' }}
-						alt=''
-					/>
-				</Link>
 			</nav>
 		);
 }

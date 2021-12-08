@@ -71,19 +71,23 @@ $utilities: map-merge(
       values: static relative absolute fixed sticky
     ),
     "top": (
+      responsive: true,
       property: top,
       values: $position-values
     ),
     "bottom": (
+      responsive: true,
       property: bottom,
       values: $position-values
     ),
     "start": (
+      responsive: true,
       property: left,
       class: start,
       values: $position-values
     ),
     "end": (
+      responsive: true,
       property: right,
       class: end,
       values: $position-values
@@ -154,9 +158,11 @@ $utilities: map-merge(
       responsive: true,
       class: w,
       values: (
+        xs:80px,
         sm:210px,
         md:250px,
-        md2:345px,
+        md1:300px,
+        md2:330px,
         lg:400px,
         lg2:440px,
         xl:500px,

@@ -77,7 +77,14 @@ const Inventory = ({ match }) => {
 		<div>
 			<CurrenPageTitle title='Inventory'></CurrenPageTitle>
 			<NavLinks match={match} />
-			<div className='container mt-10 px-md-auto px-8'>
+			<div className='container'>
+				<div className='center'>
+					<p className='text-white  mt-9 fs-23 bg-dark bg-opacity-50 p-3 rounded-3 w-auto'>
+						You Don't have any inventory
+					</p>
+				</div>
+			</div>
+			{/* <div className='container mt-10 px-md-auto px-8'>
 				<div className='row row-cols-lg-3 row-cols-md-2 gx-10'>
 					{posts.map((post) => {
 						return (
@@ -85,7 +92,7 @@ const Inventory = ({ match }) => {
 						);
 					})}
 				</div>
-			</div>
+			</div> */}
 		</div>
 	);
 };

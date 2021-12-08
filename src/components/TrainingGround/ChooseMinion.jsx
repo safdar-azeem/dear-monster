@@ -5,7 +5,7 @@ const data = [
 	{
 		id: '#123212',
 		title: 'Monster A',
-		img: '/assets/imgs/MINION.png',
+		img: '/assets/gif/4 Monster characters (1)/1. Monster animated.gif',
 		rating: '2',
 		totalRating: 3,
 		values: {
@@ -18,7 +18,7 @@ const data = [
 	{
 		id: '#123212',
 		title: 'Monster B',
-		img: '/assets/imgs/MINION2.png',
+		img: '/assets/gif/4 Monster characters (1)/3. Monster animated.gif',
 		rating: '2',
 		totalRating: 3,
 		values: {
@@ -31,7 +31,7 @@ const data = [
 	{
 		id: '#123212',
 		title: 'Monster C',
-		img: '/assets/imgs/MINION3.png',
+		img: '/assets/gif/4 Monster characters (1)/2. Monster animated.gif',
 		rating: '2',
 		totalRating: 3,
 		values: {
@@ -44,7 +44,7 @@ const data = [
 	{
 		id: '#123212',
 		title: 'Monster D',
-		img: '/assets/imgs/MINION4.png',
+		img: '/assets/gif/4 Monster characters (1)/4. Monster animated.gif',
 		rating: '2',
 		totalRating: 3,
 		values: {

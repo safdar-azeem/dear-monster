@@ -1,48 +1,17 @@
-import React from 'react'
-import PostCard from '../postCard/PostCard';
+import React, { createRef } from 'react';
+import PostCard from './PostCard';
+import data from "../../data/Post.json";
 
-const data = [
-	{
-		id: '#123212',
-		title: 'Bird',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Bird',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-	{
-		id: '#123212',
-		title: 'Bird',
-		img: '/assets/imgs/drogan.png',
-		rating: '2',
-		totalRating: 3,
-		values: {
-			level: '2/612 Exp',
-			element: 'None',
-			ownerId: 'A34500',
-		},
-		price: '3,000',
-	},
-];
+
 const ChooseDearMonster = () => {
+	const elementGroup = createRef();
+
+	const moveLeft = () => {
+		elementGroup.current.scrollLeft -= 600;
+	};
+	const moveRight = () => {
+		elementGroup.current.scrollLeft += 600;
+	};
     return (
 			<div>
 				<div className='center'>
@@ -50,28 +19,35 @@ const ChooseDearMonster = () => {
 						CHOOSE A DEARMONSTER
 					</p>
 				</div>
-				<div className='container mt-9 position-relative'>
-					<img
-						src='/assets/imgs/ArrowLeft.png '
-						className='d-md-flex d-none cursor translate-left-middle ms-3'
-					/>
-					<img
-						src='/assets/imgs/ArrowRight.png'
-						className='d-md-flex d-none cursor translate-right-middle'
-					/>
-					<div
-						class='w-85 mx-auto  px-4 overflow-auto d-flex justify-content-center align-items-center'
-						style={{ flexWrap: 'nowrap' }}
-					>
-						{data.map((post, i) => {
-							return (
-								<PostCard
-									post={post}
-									stepImg='/assets/imgs/droganBord.png'
-									className={`mb-9 ${i !== data.length - 1 && 'me-8'}`}
-								/>
-							);
-						})}
+				<div className='mt-6'>
+					<div className='container'>
+						<div
+							class='mx-auto ps-md-0 ps-7  overflow-x-auto d-flex  align-items-center'
+							style={{ flexWrap: 'nowrap', width: '93%' }}
+							ref={elementGroup}
+						>
+							{data.map((post, i) => {
+								return (
+									<PostCard
+										post={post}
+										stepImg='/assets/imgs/droganBord.png'
+										className={`mb-9 w-md-md2 w-md1 ${i !== data.length - 1 && 'me-10'}`}
+									/>
+								);
+							})}
+						</div>
+					</div>
+					<div className='d-flex  justify-content-center mb-9'>
+						<img
+							src='/assets/imgs/ArrowLeft.png '
+							className='d-flex cursor w-76px me-6'
+							onClick={moveLeft}
+						/>
+						<img
+							src='/assets/imgs/ArrowRight.png'
+							className='d-flex cursor w-76px'
+							onClick={moveRight}
+						/>
 					</div>
 				</div>
 			</div>

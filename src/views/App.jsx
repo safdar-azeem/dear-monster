@@ -2,10 +2,11 @@ import React from 'react'
 import { Route, Switch } from 'react-router-dom';
 import {Routes} from '../routes'
 import Header from '../components/common/Header'
+
 const App = () => {
-    return (
+	    return (
 			<div className=''>
-					<Header />
+				<Header />
 				<Switch>
 					{Routes.map((route, idx) => (
 						<Route

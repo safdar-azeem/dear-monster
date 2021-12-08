@@ -1,6 +1,5 @@
 import { lazy } from 'react';
 import {
-	HOME,
 	HUNTERS_VALLEY,
 	TRADING_POST,
 	INSTRUCTIONS,
@@ -49,13 +48,6 @@ export const NavbarRoutes = [
 
 export const Routes = [
 	...NavbarRoutes,
-	{
-		path: HOME,
-		title: 'Home',
-		exact: true,
-		component: lazy(() => import('../views/pages/Home')),
-	},
-	
 ];
 
 
