@@ -22,6 +22,31 @@
      overflow-x: hidden;
  }
 
+ .splide__arrow svg{
+    fill: #fff !important;
+    height: 25px !important;
+    width: 25px !important;
+ }
+ .splide__pagination{
+     display: none !important; 
+ }
+ .splide__arrow--prev {
+     top: 60% !important;
+ }
+
+ .splide__arrow--next {
+     top: 60% !important;
+ }
+@media (max-width: 568px) {
+    .splide__arrow--prev {
+        left: 0% !important;
+    }
+    .splide__arrow--next {
+         right: 2% !important;
+        }
+
+}
+
  .loading-on-load {
      background: url('/assets/imgs/background.png');
       background-repeat: no-repeat;

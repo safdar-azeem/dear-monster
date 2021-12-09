@@ -60,8 +60,8 @@ const data = [
 const ChooseMinion = () => {
     return (
 			<div>
-				<div className='center'>
-					<h5 className='text-white mt-7 sm-fs-29 fs-21'>CHOOSE A MINION</h5>
+				<div className='center mt-9'>
+					<h5 className='text-white mt-4 sm-fs-29 fs-21'>CHOOSE A MINION</h5>
 				</div>
 				<div className='container mb-9  mt-5'>
 					<div class='w-100 px-2'>

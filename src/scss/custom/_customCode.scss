@@ -1,3 +1,4 @@
+
 .center {
     display: flex !important;
     align-items: center !important;
@@ -471,7 +472,6 @@ img{
     width: 100%;
     margin: -5px auto;
     white-space: nowrap;
-    text-transform: uppercase;
 }
 
 .marqueeStyle {
@@ -497,39 +497,17 @@ img{
     }
 
     100% {
-        transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
+        transform: translateX(50%);
+        -webkit-transform: translateX(-50%);
     }
 }
 
 @keyframes scrolling-left2 {
     0% {
-        transform: translateX(0%);
-        -webkit-transform: translateX(0%);
+        right: 0%;
     }
 
     100% {
-        transform: translateX(-200%);
-        -webkit-transform: translateX(-200%);
-    }
-}
-
-@-webkit-keyframes scrolling-left1 {
-    0% {
-        -webkit-transform: translateX(100%);
-    }
-
-    100% {
-        -webkit-transform: translateX(-100%);
-    }
-}
-
-@-webkit-keyframes scrolling-left2 {
-    0% {
-        -webkit-transform: translateX(0%);
-    }
-
-    100% {
-        -webkit-transform: translateX(-200%);
+        right: 100%;
     }
 }

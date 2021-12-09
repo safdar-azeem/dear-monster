@@ -1,6 +1,8 @@
 import React, { createRef } from 'react';
 import PostCard from './PostCard';
 import data from "../../data/Post.json";
+import { Splide, SplideSlide } from '@splidejs/react-splide';
+import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 
 
 const ChooseDearMonster = () => {
@@ -20,34 +22,41 @@ const ChooseDearMonster = () => {
 					</p>
 				</div>
 				<div className='mt-6'>
-					<div className='container'>
-						<div
-							class='mx-auto ps-md-0 ps-7  overflow-x-auto d-flex  align-items-center'
-							style={{ flexWrap: 'nowrap', width: '93%' }}
-							ref={elementGroup}
+					<div className=''>
+						<Splide
+						className='container'	
+							options={{
+								rewind: true,
+								gap: '8rem',
+								perPage: 3,
+								breakpoints: {
+									1100: {
+										perPage: 2,
+									},
+									680: {
+										perPage: 1,
+									},
+								},
+								classes: {
+									arrows: '',
+									arrow: 'splide__arrow text-white',
+									prev: 'splide__arrow--prev your-class-prev border rounded-circle p-2 end-0',
+									next: 'splide__arrow--next  border rounded-circle p-2 ',
+								},
+							}}
 						>
 							{data.map((post, i) => {
 								return (
-									<PostCard
-										post={post}
-										stepImg='/assets/imgs/droganBord.png'
-										className={`mb-9 w-md-md2 w-md1 ${i !== data.length - 1 && 'me-10'}`}
-									/>
+									<SplideSlide >
+										<PostCard
+											post={post}
+											stepImg='/assets/imgs/droganBord.png'
+											className={``}
+										/>
+									</SplideSlide>
 								);
 							})}
-						</div>
-					</div>
-					<div className='d-flex  justify-content-center mb-9'>
-						<img
-							src='/assets/imgs/ArrowLeft.png '
-							className='d-flex cursor w-76px me-6'
-							onClick={moveLeft}
-						/>
-						<img
-							src='/assets/imgs/ArrowRight.png'
-							className='d-flex cursor w-76px'
-							onClick={moveRight}
-						/>
+						</Splide>
 					</div>
 				</div>
 			</div>

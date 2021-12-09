@@ -198,5 +198,103 @@
              "ownerId": "A34500"
          },
          "price": "3000"
-     }
+     },
+      {
+          "id": "13",
+          "title": "Hydra",
+          "cetagory": "Hydra",
+          "img": "/assets/gif/Hydra (1)/1. Hydra animated.gif",
+          "rating": "1",
+          "totalRating": 3,
+          "level": "1",
+          "values": {
+              "level": "2/612 Exp",
+              "element": "None",
+              "offchain_Exp": "",
+              "energy": 2,
+              "ownerId": "A34500"
+          },
+          "price": "1000"
+      }, {
+          "id": "14",
+          "title": "Hydra",
+          "cetagory": "Hydra",
+          "img": "/assets/gif/Hydra (1)/2. Hydra animated.gif",
+          "rating": "2",
+          "totalRating": 3,
+          "level": "2",
+          "values": {
+              "level": "2/612 Exp",
+              "element": "None",
+              "offchain_Exp": "",
+              "energy": 2,
+              "ownerId": "A34500"
+          },
+          "price": "2000"
+      }, {
+          "id": "15",
+          "title": "Eevee",
+          "cetagory": "Eevee",
+          "img": "/assets/gif/Hydra (1)/3. Hydra animated.gif",
+          "rating": "3",
+          "totalRating": 3,
+          "level": "1",
+          "values": {
+              "level": "2/612 Exp",
+              "element": "None",
+              "offchain_Exp": "",
+              "energy": 2,
+              "ownerId": "A34500"
+          },
+          "price": "3000"
+      },
+       {
+           "id": "16",
+           "title": "turtle",
+           "cetagory": "turtle",
+           "img": "/assets/gif/Turtle/1. turtle animated.gif",
+           "rating": "1",
+           "totalRating": 3,
+           "level": "1",
+           "values": {
+               "level": "2/612 Exp",
+               "element": "None",
+               "offchain_Exp": "",
+               "energy": 2,
+               "ownerId": "A34500"
+           },
+           "price": "1000"
+       }, {
+           "id": "17",
+           "title": "turtle",
+           "cetagory": "turtle",
+           "img": "/assets/gif/Turtle/2. turtle animated.gif",
+           "rating": "2",
+           "totalRating": 3,
+           "level": "2",
+           "values": {
+               "level": "2/612 Exp",
+               "element": "None",
+               "offchain_Exp": "",
+               "energy": 2,
+               "ownerId": "A34500"
+           },
+           "price": "2000"
+       }, {
+           "id": "18",
+           "title": "turtle",
+           "cetagory": "turtle",
+           "img": "/assets/gif/Turtle/3. turtle animated.gif",
+           "rating": "3",
+           "totalRating": 3,
+           "level": "1",
+           "values": {
+               "level": "2/612 Exp",
+               "element": "None",
+               "offchain_Exp": "",
+               "energy": 2,
+               "ownerId": "A34500"
+           },
+           "price": "3000"
+       }
 ]
