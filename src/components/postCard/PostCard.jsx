@@ -6,6 +6,7 @@ const PostCard = ({ className, post, stepImg }) => {
 	const {userId} = useSelector(state => state.auth)
 	const dispatch= useDispatch();
 
+
 	return (
 		<div className={`${className}`}>
 			<header className='center mb-3'>
@@ -16,7 +17,7 @@ const PostCard = ({ className, post, stepImg }) => {
 					<img src={post?.img} className='w-md2' />
 				</div>
 				<div class='findDearMonster w-100   h-100 py-4 ' style={{ marginTop: '-55px' }}>
-					<p className='text-center mt-32px fs-18 bold'>{post?.title}</p>
+					<p className='text-center mt-47px fs-18 bold'>{post?.title}</p>
 					<div className='center mt-5'>
 						<div>
 							{[...Array(post?.totalRating)].map((e, i) => {
@@ -33,7 +34,12 @@ const PostCard = ({ className, post, stepImg }) => {
 					</div>
 					<div className='text-white center flex-column mt-5 fs-18'>
 						{Object.keys(post?.values).map((key, index) => {
-							if (key == 'level' || key == 'element' || key == 'offchain_Exp') {
+							if (
+								key == 'level' ||
+								key == 'element' ||
+								key == 'offchain_Exp' ||
+								key == 'ownerId'
+							) {
 								return (
 									<div className='mb-4'>
 										<span className='me-2'>{key} :</span>

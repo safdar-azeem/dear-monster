@@ -40,12 +40,21 @@ export const usePagination = (data, itemsPerPage) => {
 	};
 
 	const doPagination = (data, itemsPerPage,currentPage) => {
-		data.length>0 &&	setTotalData(data);
+		if(data==null){
+			setTotalData([]);
+			setTotalPages(0);
+			setPageData([]);
+			setCurrentPage(1);
+		}else{	
+		data.length > 0 && setTotalData(data);
 		data.length > 0 && setPageData(data.slice(0, totalItemsPerPage));
 		const totalPages = Math.ceil(data.length / totalItemsPerPage);
 		data.length > 0 && setTotalPages(totalPages);
 		itemsPerPage && setTotalItemsPerPage(itemsPerPage);
 		currentPage && setCurrentPage(currentPage);
+
+		}
+
 	};
 
 	React.useEffect(() => {

@@ -1,4 +1,4 @@
-import React, { createRef } from 'react';
+import React, {  } from 'react';
 import PostCard from './PostCard';
 import data from "../../data/Post.json";
 import { Splide, SplideSlide } from '@splidejs/react-splide';
@@ -6,14 +6,6 @@ import '@splidejs/splide/dist/css/themes/splide-skyblue.min.css';
 
 
 const ChooseDearMonster = () => {
-	const elementGroup = createRef();
-
-	const moveLeft = () => {
-		elementGroup.current.scrollLeft -= 600;
-	};
-	const moveRight = () => {
-		elementGroup.current.scrollLeft += 600;
-	};
     return (
 			<div>
 				<div className='center'>
@@ -24,11 +16,14 @@ const ChooseDearMonster = () => {
 				<div className='mt-6'>
 					<div className=''>
 						<Splide
-						className='container'	
+							className='container'
 							options={{
 								rewind: true,
 								gap: '8rem',
-								perPage: 3,
+								perPage: data.length == 1 ? 1 : 3,
+								pagination: false,
+								drag: false,
+								perMove: 3,
 								breakpoints: {
 									1100: {
 										perPage: 2,
@@ -39,7 +34,7 @@ const ChooseDearMonster = () => {
 								},
 								classes: {
 									arrows: '',
-									arrow: 'splide__arrow text-white',
+									arrow: `splide__arrow text-white ${data.length == 1 ? 'd-none' : ''}`,
 									prev: 'splide__arrow--prev your-class-prev border rounded-circle p-2 end-0',
 									next: 'splide__arrow--next  border rounded-circle p-2 ',
 								},
@@ -47,11 +42,10 @@ const ChooseDearMonster = () => {
 						>
 							{data.map((post, i) => {
 								return (
-									<SplideSlide >
+									<SplideSlide>
 										<PostCard
 											post={post}
 											stepImg='/assets/imgs/droganBord.png'
-											className={``}
 										/>
 									</SplideSlide>
 								);

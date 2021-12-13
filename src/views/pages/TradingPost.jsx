@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, {useState, } from 'react';
 import FindMonster from '../../components/TradingPost/FindMonster';
 import PostCard from '../../components/postCard/PostCard';
 import { useHistory } from 'react-router';
@@ -9,6 +9,7 @@ import { usePagination } from '../../hooks/usePagination';
 const TradingPost = ({}) => {
 	const history = useHistory();
 	const [filterValues, setFilterValues] = useState({});
+	const [error, setError] = useState('');
 	const { pageData, currentPage, previousPage, nextPage, totalPages, doPagination } =
 		usePagination(data, 6, history.location.pathname);
 
@@ -29,13 +30,24 @@ const TradingPost = ({}) => {
 		setFilterValues(filteringValues);
 	};
 
-	const searchData = (searchValue) => {
-		const searchData = data.filter((item) => {
-			return item.id.toLowerCase()==searchValue.toLowerCase();
-		});
-		doPagination(searchData);
+	const clearFilterData = () => {
+		setFilterValues({});
+		doPagination(data);
 	};
 
+	const searchData = (searchValue) => {
+		const searchData = [...data].filter((e) =>
+			'#' == searchValue[0]
+				? e.id.toLowerCase() == searchValue.slice(1).toLowerCase()
+				: e.id.toLowerCase() == searchValue.toLowerCase(),
+		);
+		if (searchData.length === 0) {
+			setError('No data found');
+			doPagination(null);
+		} else {
+			doPagination(searchData);
+		}
+	};
 
 	const clearSearchData = () => {
 		doPagination(data);
@@ -45,7 +57,7 @@ const TradingPost = ({}) => {
 		if (Object.keys(filterValues).length !== 0) {
 			const filterdata = data.filter((item) => {
 				const isTrue = Object.keys(filterValues).filter((key) => {
-					return filterValues[key].includes(item[key]);
+					return filterValues[key] == item[key];
 				});
 				return isTrue.length >= 1 && item;
 			});
@@ -64,14 +76,15 @@ const TradingPost = ({}) => {
 							sortData={sortData}
 							searchData={searchData}
 							clearSearchData={clearSearchData}
+							clearFilterData={clearFilterData}
 						/>
 					</div>
 					<div class='col-lg-9 col-md-7 col-12'>
 						<div class='px-md-0'>
 							<section className='row row-cols-lg-3  gx-8 mt-9 	mt-md-0 '>
-								{'error' && pageData.length == 0 ? (
+								{error && pageData.length == 0 ? (
 									<div className='col-12 center w-100 text-white mt-5'>
-										<h3>{'error'}</h3>
+										<h3>{error}</h3>
 									</div>
 								) : (
 									pageData.map((post) => {

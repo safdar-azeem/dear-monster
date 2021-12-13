@@ -53,7 +53,7 @@ const Header = () => {
 							? 'position-fixed bg-dark top-0 w-100 w-100 start-0 vh-lg-auto vh-100'
 							: 'd-none d-lg-flex align-items-center '
 					} `}
-					style={{ zIndex: '9999' }}
+					style={{ zIndex: '999' }}
 				>
 					<button
 						className={`${active && 'd-flex-imp'} d-none btn m-3 me-2`}
@@ -102,36 +102,53 @@ const Header = () => {
 						<div>
 							<div class='dropdown ms-4'>
 								<button
-									class='btn  w-105px h-35px rounded-3 text-white border border-warning center'
+									class='btn dropdown-toggle fs-13 w-105px h-35px rounded-3 text-white border border-warning center'
 									type='button'
 									id='dropdownMenuButton1'
 									data-bs-toggle='dropdown'
 									aria-expanded='false'
 								>
-									{userId && `${userId.substring(0, 4)} ${userId.slice(-4)}`}
+									{userId && `${userId.substring(0, 4)}...${userId.slice(-4)}`}
 								</button>
-								<ul class='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+								<ul
+									class='dropdown-menu  w-sm dropdown-menu-end '
+									aria-labelledby='dropdownMenuButton1'
+								>
 									<li>
-										<a class='dropdown-item py-7px' href='#'>
-											Cart
+										<a class='dropdown-item py-5 text-whit cursor py-7px' href='#'>
+											Wallet
 										</a>
 									</li>
 									<li>
-										<a class='dropdown-item py-7px' href='#'>
-											Transaction History
+										<a class='dropdown-item py-5 text-whit cursor py-7px' href='#'>
+											Transactions
 										</a>
 									</li>
 									<li>
-										<p class='dropdown-item py-7px' href='#'>
+										<p class='dropdown-item py-5 text-whit cursor py-7px' href='#'>
+											Your NFTs
+										</p>
+									</li>
+									<li>
+										<p class='dropdown-item py-5 text-whit cursor py-7px' href='#'>
+											Make a Profile
+										</p>
+									</li>
+									<li>
+										<p class='dropdown-item py-5 text-whit cursor py-7px' href='#'>
 											Disconnect
 										</p>
 									</li>
 								</ul>
 							</div>
 							<div class='mt-2'>
-								<button class='btn border position-absolute  center w-100px px-1 fs-12   mx-4  text-white cursor'>
+								<a
+									target='_blank'
+									href='https://pancakeswap.finance/swap?outputCurrency=0x9bfd1348cf574e3eb2b114cc18374b09ad012c69&inputCurrency=BNB'
+									class='btn border position-absolute  center w-100px px-1 fs-12   mx-4  text-white cursor'
+								>
 									BUY DMS
-								</button>
+								</a>
 							</div>
 						</div>
 					)}

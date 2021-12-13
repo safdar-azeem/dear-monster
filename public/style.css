@@ -27,9 +27,6 @@
     height: 25px !important;
     width: 25px !important;
  }
- .splide__pagination{
-     display: none !important; 
- }
  .splide__arrow--prev {
      top: 60% !important;
  }

@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react'
 
 
-const FindMonster = ({ filterData, sortData, searchData, clearSearchData }) => {
+const FindMonster = ({
+	filterData,
+	sortData,
+	searchData,
+	clearSearchData,
+	clearFilterData,
+}) => {
 	const [rating, setRating] = React.useState([]);
 	const [levels, setLevels] = React.useState([]);
 	const [isSearch, setIsSearch] = React.useState(false);
+	const [isFilter, setIsFilter] = React.useState(false);
 	const [searchValue, setSearchValue] = React.useState('');
 	const addRating = (e) => {
 		setRating(rating.concat(e.target.value));
@@ -27,16 +34,17 @@ const FindMonster = ({ filterData, sortData, searchData, clearSearchData }) => {
 	const handleFiltering = (e) => {
 		e.preventDefault();
 		filterData({ rating, level: levels });
+		setIsFilter(true);
 	};
 
 	const handleSearch = (e) => {
 		e.preventDefault();
 		searchData(e.target.value);
 		setSearchValue(e.target.value);
-		if(e.target.value){
+		if (e.target.value) {
 			setIsSearch(true);
-		}
-		else{
+		} else {
+			clearSearchData();
 			setIsSearch(false);
 		}
 	};
@@ -118,9 +126,9 @@ const FindMonster = ({ filterData, sortData, searchData, clearSearchData }) => {
 				<p>Level</p>
 
 				<div class='row w-85 mt-5'>
-					{[...Array(6).keys()].map((star, i) => {
+					{[...Array(3).keys()].map((star, i) => {
 						return (
-							<div class='col-4 mb-5'>
+							<div class='col-4 mb-3'>
 								<div class='form-check'>
 									<input
 										class='form-check-input p-2'
@@ -152,6 +160,19 @@ const FindMonster = ({ filterData, sortData, searchData, clearSearchData }) => {
 				>
 					Filter
 				</div>
+				{isFilter && (
+					<button
+						className='btn center mx-auto mt-5 btn-outline-secondary'
+						onClick={() => {
+							setIsFilter(false);
+							clearFilterData();
+							setLevels([]);
+							setRating([]);
+						}}
+					>
+						Clear Filter
+					</button>
+				)}
 			</footer>
 		</div>
 	);
